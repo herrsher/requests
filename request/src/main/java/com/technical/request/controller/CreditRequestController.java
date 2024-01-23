@@ -1,12 +1,11 @@
 package com.technical.request.controller;
 
-import com.technical.request.dto.ServiceRequestDTO;
-import com.technical.request.form.ServiceRequestForm;
-import com.technical.request.service.ServiceRequestService;
+import com.technical.request.dto.CreditRequestDTO;
+import com.technical.request.form.CreditRequestForm;
+import com.technical.request.service.CreditRequestService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,14 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/request")
 @RequiredArgsConstructor
-public class ServiceRequestController {
+public class CreditRequestController {
 
-    private final ServiceRequestService serviceRequestService;
+    private final CreditRequestService creditRequestService;
 
     @PostMapping
-    public ResponseEntity<ServiceRequestDTO> create(
-            @RequestBody final ServiceRequestForm form) {
+    public ResponseEntity<CreditRequestDTO> create(
+            @RequestBody final CreditRequestForm form) {
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(serviceRequestService.createServiceRequest(form));
+                .body(creditRequestService.createServiceRequest(form));
     }
 }

@@ -1,29 +1,31 @@
 package com.technical.request.entity;
 
-import com.technical.request.form.ServiceRequestForm;
+import com.technical.request.form.CreditRequestForm;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
-public class ServiceRequest {
+@NoArgsConstructor
+public class CreditRequest {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private String requestId;
     private String promoter;
     private String company;
+    private String status;
     private int customerId;
-    private String requestId;
 
-    public ServiceRequest(
-            final ServiceRequestForm form,
+    public CreditRequest(
+            final CreditRequestForm form,
             final int customerId,
             final String requestId) {
         this.promoter = form.getPromoter();
         this.company = form.getCompany();
+        this.status = "NEW";
         this.customerId = customerId;
         this.requestId = requestId;
     }

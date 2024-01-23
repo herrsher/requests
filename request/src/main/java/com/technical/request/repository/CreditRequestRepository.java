@@ -1,9 +1,9 @@
 package com.technical.request.repository;
 
-import com.technical.request.entity.ServiceRequest;
+import com.technical.request.entity.CreditRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ServiceRequestRepository extends JpaRepository<ServiceRequest, Integer> {
+public interface CreditRequestRepository extends JpaRepository<CreditRequest, Integer> {
 }
