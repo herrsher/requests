@@ -12,6 +12,7 @@ import java.util.Date;
 @Entity
 @Getter
 public class Request {
+    @Id
     private String requestId;
     private BigDecimal amount;
     private String product;

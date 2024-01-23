@@ -9,6 +9,7 @@ import lombok.Getter;
 @Entity
 @Getter
 public class Customer {
+    @Id
     private int id;
     private String name;
     private String lastName;
