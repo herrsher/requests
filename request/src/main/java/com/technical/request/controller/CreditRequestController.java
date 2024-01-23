@@ -22,6 +22,6 @@ public class CreditRequestController {
     public ResponseEntity<CreditRequestDTO> create(
             @RequestBody final CreditRequestForm form) {
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(creditRequestService.createServiceRequest(form));
+                .body(creditRequestService.createCreditRequest(form));
     }
 }

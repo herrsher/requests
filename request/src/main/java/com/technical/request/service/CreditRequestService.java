@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 public class CreditRequestService {
     private final CreditRequestRepository creditRequestRepository;
 
-    public CreditRequestDTO createServiceRequest(CreditRequestForm form) {
+    public CreditRequestDTO createCreditRequest(CreditRequestForm form) {
         final Customer customer = new Customer();
         final Request request = new Request();
         final CreditRequest creditRequest
