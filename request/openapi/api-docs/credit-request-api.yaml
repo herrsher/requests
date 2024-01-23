@@ -1,0 +1,21 @@
+openapi: 3.0.0
+info:
+  title: Credit Request API
+  version: 1.0.0
+paths:
+  /request:
+    post:
+      summary: Create a new credit request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: 'credit-request-request.yaml#/components/schemas/CreditRequestForm'
+      responses:
+        '201':
+          description: Credit request created successfully
+          content:
+            application/json:
+              schema:
+                $ref: 'credit-request-resource.yaml#/components/schemas/CreditRequestDTO'

@@ -1,0 +1,66 @@
+components:
+  schemas:
+    CustomerDTO:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: The customer's ID.
+        name:
+          type: string
+          description: The customer's name.
+        lastName:
+          type: string
+          description: The customer's last name.
+        maternalLastName:
+          type: string
+          description: The customer's maternal last name.
+    RequestDTO:
+      type: object
+      properties:
+        requestId:
+          type: string
+          description: The request ID.
+        amount:
+          type: number
+          format: number
+          description: The requested amount.
+        product:
+          type: string
+          description: The product associated with the request.
+        requestType:
+          type: string
+          description: The type of request.
+        requestTypeId:
+          type: string
+          description: The ID associated with the request type.
+        rate:
+          type: integer
+          description: The rate associated with the request.
+        term:
+          type: integer
+          description: The term associated with the request.
+        frequency:
+          type: string
+          description: The frequency of the request.
+        requestDate:
+          type: string
+          format: date
+          description: The date of the request.
+    CreditRequestDTO:
+      type: object
+      properties:
+        promoter:
+          type: string
+          description: The promoter's name.
+        company:
+          type: string
+          description: The company's name.
+        status:
+          type: string
+          description: The status of the credit request.
+        customerDTO:
+          $ref: '#/components/schemas/CustomerDTO'
+        requestDTO:
+          $ref: '#/components/schemas/RequestDTO'

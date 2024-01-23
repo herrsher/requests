@@ -1,0 +1,14 @@
+components:
+  schemas:
+    CreditRequestForm:
+      type: object
+      properties:
+        promoter:
+          type: string
+          description: The promoter's name.
+        company:
+          type: string
+          description: The company's name.
+      required:
+        - promoter
+        - company
